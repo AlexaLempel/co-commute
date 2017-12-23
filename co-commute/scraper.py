@@ -46,12 +46,12 @@ def do_scrape():
     """
 
     # Get all the results from craigslist
-    the_results = []
+    all_results = []
     for area in settings.AREAS:
         all_results += scrape_area(area)
 
     print("{}: Got {} results".format(time.ctime(), len(all_results)))
 
     # Post each result
-    for result in the_results:
+    for result in all_results:
         post_listing(result)
